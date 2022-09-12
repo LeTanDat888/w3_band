@@ -32,7 +32,7 @@ For newbei
 }
 
 #nav {
-
+    display: inline-block;
 }
 
 #nav > li {
@@ -64,6 +64,10 @@ For newbei
     color: #000;
 }
 
+#nav .nav-arrow-font{
+    font-size: 12px;
+}
+
 #nav li:hover .subnav {
     display: block;
 }
@@ -82,6 +86,23 @@ For newbei
     color: #000;
     padding: 0 12px;
     line-height: 38px
+    
+}
+
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
     
 }
 
