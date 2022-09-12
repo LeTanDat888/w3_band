@@ -27,6 +27,10 @@ For newbei
 }
 
 #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 46px;
     background-color: #000;
 }
@@ -108,7 +112,8 @@ For newbei
 
 #slider {
     min-height: 500px;
-    /* background-color: #ccc; */
+    margin-top: 46px;
+    background-color: greenyellow;
 }
 
 #content {
