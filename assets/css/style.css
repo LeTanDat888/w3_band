@@ -12,6 +12,10 @@ html {
 .clear {
     clear: both;
 }
+
+.text-white {
+    color: #fff;
+}
 /* 
 Cách làm
 1. Từ ngoài vào trong
@@ -195,6 +199,43 @@ For newbei
     margin-top: 15px;
     width: 154px;
     border-radius: 8px;
+}
+
+/* Tour sectoin */
+.tour-section {
+    background-color: #000;
+}
+
+.tickets-list {
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+.tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border: 1px solid #ddd;
+    color: #757575;
+    list-style: none;
+}
+
+.tickets-list .sold-out {
+    background-color: #F44336;
+    padding: 3px 4px;
+    color: #fff;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    float: right;
+    margin-top: -3px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
 }
 
 #fooder {
