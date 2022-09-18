@@ -92,7 +92,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-sticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -101,7 +101,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-sticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -110,7 +110,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="place-buy-btn js-buy-sticket">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -131,8 +131,69 @@
         </div>
     </div>
     <!-- Modal buy sticket -->
-    <div class="modal">
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
 
+            <div class="modal-header">
+                <i class="modal-icon-bag ti-bag"></i>
+                Tickets
+            </div>
+
+            <div class="modal-body">
+                <label for="modal-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" id="modal-quantity" class="modal-input" placeholder="How many?">
+
+                <label for="modal-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input type="text" id="modal-email" class="modal-input" placeholder="Enter Email">
+
+                <button id="buy-stickets">
+                    Pay
+                    <i class="ti-check"></i>
+                </button>
+            </div>
+
+            <footer class="modal-footer">
+                <p class="madal-help">Need <a href="#">help?</a></p>
+            </footer>
+        </div>
     </div>
+
+    <script>
+        const buyBtns = document.querySelectorAll(".js-buy-sticket");
+        const modal = document.querySelector('.js-modal');
+        const modalCloseBtn = document.querySelector('.js-modal-close');
+        const modalContainer = document.querySelector('.js-modal-container');
+
+        function removeBuySticket(){
+            modal.classList.remove('open');
+        }
+
+        //show modal khi click buySticket 
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', function showBuyStickets(){
+                modal.classList.add('open');
+            })
+        }
+
+        // Thêm sự kiện remove modal
+        modalCloseBtn.addEventListener('click', removeBuySticket);
+
+        modal.addEventListener('click', removeBuySticket);
+
+        //Ngăn chặn sự kiện nổi bọt từ element modalContainer 
+        modalContainer.addEventListener('click', function(event){
+            event.stopPropagation();
+        })
+
+    </script>
 </body>
 </html>
